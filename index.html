@@ -3,21 +3,19 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
   <link rel="apple-touch-icon" href="./launcher-icon-144.png">
   <link rel="apple-touch-startup-image" href="./launcher-icon-144.png">
   <meta name="apple-mobile-web-app-title" content="Location">
 
   <link rel="manifest" href="./manifest.json">
 
-	<title>New HTML Location Functionality</title>
-	
+  <title>New HTML Location Functionality</title>
 
-  
   <script src="js/getLocation.js"></script>
-    <link rel="icon" sizes="192x192" href="./launcher-icon-144.png">
+  <link href="./launcher-icon-144.png" rel="icon" sizes="192x192">
 
-<!-- place this in a head section -->
+  <!-- place this in a head section -->
 
 </head>
 <body>
@@ -25,24 +23,22 @@
 <div id='showLocation'>Location will be displayed here</div>
 <button id='getLocation' onclick='getLocation()'>Click Me to Get Your Location</button>
 <script>
-	window.addEventListener('load', ()=>{
- 
-  // The navigator object contains information about the browser.
-  // so, does the browser support service workers?
-  if('serviceWorker' in navigator){
-    try {
-      // nb the file has to be called serviceWorker.js and 
-      // be in the route directory 
-      navigator.serviceWorker.register('serviceWorker.js');
-      console.log("Service Worker Registered");
-    } catch (error) {
-      console.log("Service Worker Registration Failed");
+  window.addEventListener('load', () => {
+
+    // The navigator object contains information about the browser.
+    // so, does the browser support service workers?
+    if ('serviceWorker' in navigator) {
+      try {
+        // nb the file has to be called serviceWorker.js and
+        // be in the route directory
+        navigator.serviceWorker.register('serviceWorker.js');
+        console.log("Service Worker Registered");
+      } catch (error) {
+        console.log("Service Worker Registration Failed");
+      }
     }
-  };
+  });
 
-
-});
-
-	</script>
+</script>
 </body>
 </html>
